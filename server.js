@@ -1,6 +1,11 @@
 const express = require("express");
 const app = express();
-const PORT = 8080;
+const dotenv = require("dotenv");
+dotenv.config({
+  path: ".env"
+});
+
+const PORT = process.env.PORT || 8080;
 
 app.get("/", (req, res) => {
   res.end("Hola mundo!")
